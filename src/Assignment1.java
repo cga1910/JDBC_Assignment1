@@ -8,7 +8,9 @@ public class Assignment1 {
 public static Connection getConnection() {
 
   try {
-    String url = "jdbc:mysql://localhost:3306/sqlandjava?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+    String url = "jdbc:mysql://localhost:3306/sqlandjava" +
+                 "?useUnicode=true&useJDBCCompliantTimezoneShift=true" +
+                 "&useLegacyDatetimeCode=false&serverTimezone=UTC";
     String username = "user";
     String password = "password";
 
