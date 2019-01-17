@@ -6,11 +6,9 @@ import java.sql.Statement;
 public class Assignment1 {
 
   public static Connection getConnection() {
-
     try {
       String url = "jdbc:mysql://localhost:3306/sqlandjava" +
-                   "?useUnicode=true&useJDBCCompliantTimezoneShift=true" +
-                   "&useLegacyDatetimeCode=false&serverTimezone=UTC";
+                   "?serverTimezone=UTC";
       String username = "user";
       String password = "password";
 
@@ -27,12 +25,13 @@ public class Assignment1 {
   public static void main(String[] args) throws Exception {
     Connection conn = getConnection();
     Statement statement = conn.createStatement();
+
     ResultSet resultSet = statement.executeQuery("SELECT * FROM people");
 
     while (resultSet.next()) {
       System.out.println(resultSet.getString("person_id") + ": " +
-              resultSet.getString("firstname") + " " +
-              resultSet.getString("lastname"));
+                         resultSet.getString("firstname") + " " +
+                         resultSet.getString("lastname"));
     }
   }
 
